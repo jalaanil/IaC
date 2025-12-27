@@ -1,12 +1,19 @@
 # The configuration for the `remote` backend.
 terraform {
-  backend "remote" {
+  /*backend "remote" {
   # The name of your Terraform Cloud organization.
   organization = "jalaanil-org"
   # The name of the Terraform Cloud workspace to store Terraform state files in.
   workspaces {
        name = "test_workspace"
       }
+  }*/
+
+  backend "azurerm" {
+      resource_group_name  = "tfstate"
+      storage_account_name = "akjtfstorage"
+      container_name       = "tfstate"
+      key                  = "terraform.tfstate"
   }
 
   required_version = ">= 1.1.0"
