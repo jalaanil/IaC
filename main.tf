@@ -8,8 +8,19 @@ terraform {
        name = "test_workspace"
       }
   }
+
+  required_version = ">= 1.1.0"
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 3.0.2"
+    }
+  }  
 }
 
+provider "azurerm" {
+  features {}
+}
 
 variable "prefix" {
 	default ="akjcoregh1"
@@ -19,3 +30,7 @@ variable "location" {
 	default ="Switzerland North"
 }
 
+resource "azurerm_resource_group" "rg" {
+  name     = "${var.prefix}-rg"
+  location = var.location
+}
