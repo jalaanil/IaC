@@ -10,7 +10,7 @@ terraform {
   }*/
 
   backend "azurerm" {
-      use_azuread_auth     = true 
+      /*use_azuread_auth     = true */
       tenant_id            = "d68a238a-c112-4e92-82be-5f67eb3da666"  
       client_id            = "40cb5fa5-6890-4bb8-8076-92dbaf67b109" 
       client_secret        = "XNc8Q~F86DTYRsRKqgSuaAhYqHekkJGnzMYItccx" 
