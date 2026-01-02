@@ -99,3 +99,18 @@ jobs:
     - name: Terraform Apply
       #if: github.ref == 'refs/heads/"master"' && github.event_name == 'push'
       run: terraform apply -auto-approve -input=false
+  sayhello:
+    name: 'sayhello'
+    runs-on: ubuntu-latest
+    environment: production
+
+    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
+    defaults:
+      run:
+        shell: bash
+
+    
+    steps:
+    # Checkout the repository to the GitHub Actions runner
+    - name: printhello
+      run: echo "Hello World"
