@@ -1,0 +1,8 @@
+Helloworld:
+  name : HelloWorld
+  on : Workflow-dispatch
+  
+Jobs :
+  SayHello :
+    runsOn : Ubuntulatest
+    run : echo "Hello World"
